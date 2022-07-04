@@ -1,9 +1,9 @@
 
 const Roadmap = () => {
     return (
-        <section className="road-map padding-top-150 padding-bottom-50" id="roadmap">
+        <section className="road-map tw-py-32" id="roadmap">
             <div className="container">
-                <h2>Our Main Road Map</h2>
+                <h2 className="tw-uppercase tw-text-4xl tw-font-semibold">Our Main Road Map</h2>
                 <ul className="edu-list margin-top-50">
                     <li> <span>Phase 1</span>
                         <p>-Community start</p>

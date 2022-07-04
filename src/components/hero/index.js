@@ -26,10 +26,10 @@ const Hero = () => {
             />
             <div className="position-center-center">
                 <div className="container text-center">
-                    <h1>Albino </h1>
+                    <h1 className="tw-text-[42px]">Albino </h1>
                     <p>An Innovative NFT & Metaverse
                         platform</p>
-                    <a href="#." className="btn">Join Us</a> <a href="#." className="btn btn-inverse">View White Paper</a>
+                    <a href="./whitepaper.pdf" className="btn btn-inverse">View White Paper</a>
                 </div>
             </div>
         </section>

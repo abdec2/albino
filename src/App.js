@@ -17,31 +17,15 @@ import WhyChoose from './components/whychoose'
 import Token from './components/token'
 import Roadmap from './components/roadmap'
 import Community from './components/community'
+import GotoTop from './components/gotoTop';
+import Footer from './components/footer'
 
 function App() {
 
   useEffect(() => {
-    $(".sticky").sticky({ topSpacing: 0 });
+    $(".sticky").sticky({ topSpacing: 0, zIndex: 12 });
     $("#loader").delay(500).fadeOut("slow");
-    // $('.full-screen').superslides({});
-    // $('.countdown').downCount({
-    //   date: '12/12/2018 12:00:00' // M/D/Y
-    // });
-    // $('.countdown-all').downCount({
-    //   date: '12/12/2020 12:00:00' // M/D/Y
-    // });
-    // $('.counter').counterUp({
-    //   delay: 50,
-    //   time: 2000
-    // });
-    // $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-    //   disableOn: 700,
-    //   type: 'iframe',
-    //   mainClass: 'mfp-fade',
-    //   removalDelay: 160,
-    //   preloader: false,
-    //   fixedContentPos: false
-    // });
+   
 
   }, [])
   return (
@@ -60,12 +44,14 @@ function App() {
           <Vision />
           <Purpose />
           <Benefits />
-          <NFT />
+          {/* <NFT />
           <Metaverse />
-          <WhyChoose />
+          <WhyChoose /> */}
           <Token />
           <Roadmap />
           <Community />
+          <Footer />
+          <GotoTop />
         </div>
       </div>
     </div>

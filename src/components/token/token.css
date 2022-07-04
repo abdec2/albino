@@ -1,0 +1,35 @@
+.txtBoxAmount:focus {
+    outline: none;
+}
+
+.btnBuy {
+    background: rgb(123,63,228);
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btnBuy:focus {
+    outline: none;
+}
+.btnBuy:hover {
+    background: rgb(137, 70, 252);
+}
+
+.metamask-width {
+    width: 15%;
+}
+
+.metamask-bg {
+    background: none;
+    cursor: pointer;
+}
+.metamask-bg:focus {
+    outline: none;
+}
+.metamask-bg:hover {
+    background: rgba(255, 255, 255, 0.1);
+}

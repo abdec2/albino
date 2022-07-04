@@ -1,15 +1,18 @@
 
 const Mission = () => {
     return (
-        <section className="why-choose padding-top-5 padding-bottom-150">
+        <section className="why-choose tw-bg-black tw-py-32 tw-text-white">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-7 margin-top-60">
+                    <div className="col-12">
                         <div className="heading margin-bottom-20">
-                            <h6 className="margin-bottom-10"></h6>
-                            <h4>MISSION</h4>
+                            <h4 className="tw-text-white">MISSION</h4>
                         </div>
-                        <p>Albino is a decentralized finance platform built on a blockchain with a
+                    </div>
+                </div>
+                <div className="row tw-items-center">
+                    <div className="col-lg-7 tw-mb-10 lg:tw-mb-0">
+                        <p className="tw-text-white tw-text-justify">Albino is a decentralized finance platform built on a blockchain with a
                             mission to create a community-driven ecosystem that empowered the
                             holders to better their financial condition.
                             <br />Our mission is to:
@@ -33,8 +36,8 @@ const Mission = () => {
                         </ul>
                     </div>
 
-                    <div className="col-md-5 text-right"> <img src="images/bernard-hermant-z9AOxTYQBy4-unsplash.jpg"
-                        alt="Why Choose Us Image" />
+                    <div className="col-lg-5 tw-flex tw-items-center tw-justify-center"> 
+                        <img src="images/bernard-hermant-z9AOxTYQBy4-unsplash.jpg" alt="Why Choose Us Image" />
                     </div>
                 </div>
             </div>

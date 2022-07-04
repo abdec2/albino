@@ -1,70 +1,67 @@
 {
-    "fullScreen": {
-        "enable": true,
-        "zIndex": 1
-    },
-    "fpsLimit": 24,
-    "particles": {
-        "color": {
-          "value": "#ffffff"
-        },
-        "links": {
-          "color": "#ffffff",
-          "distance": 150,
-          "enable": true,
-          "opacity": 0.1,
-          "width": 1
-        },
-        "collisions": {
-          "enable": true
-        },
-        "move": {
-          "direction": "none",
-          "enable": true,
-          "outModes": {
-            "default": "bounce"
-          },
-          "random": false,
-          "speed": 1,
-          "straight": false
-        },
-        "number": {
-          "density": {
-            "enable": true,
-            "area": 1200
-          },
-          "value": 100
-        },
-        "opacity": {
-          "value": 0.1
-        },
-        "shape": {
-          "type": "circle"
-        },
-        "size": {
-          "value": { "min": 1, "max": 5 }
-        }
+  "fpsLimit": 24,
+  "interactivity": {
+    "events": {
+      "onClick": {
+        "enable": false,
+        "mode": "push"
       },
-    "interactivity": {
-        "events": {
-            "onHover": {
-                "enable": true,
-                "mode": "repulse"
-            },
-            "onClick": {
-                "enable": true,
-                "mode": "push"
-            },
-            "resize": true
-        },
-        "modes": {
-            "repulse": {
-                "distance": 200
-            },
-            "push": {
-                "quantity": 4
-            }
-        }
+      "onHover": {
+        "enable": false,
+        "mode": "repulse"
+      },
+      "resize": true
     },
-    "detectRetina": true
+    "modes": {
+      "push": {
+        "quantity": 4
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.1
+      }
+    }
+  },
+  "particles": {
+    "color": {
+      "value": "#ffffff"
+    },
+    "links": {
+      "color": "#ffffff",
+      "distance": 150,
+      "enable": true,
+      "opacity": 0.1,
+      "width": 1
+    },
+    "collisions": {
+      "enable": true
+    },
+    "move": {
+      "direction": "none",
+      "enable": true,
+      "outModes": {
+        "default": "bounce"
+      },
+      "random": false,
+      "speed": 1,
+      "straight": false
+    },
+    "number": {
+      "density": {
+        "enable": true,
+        "area": 1200
+      },
+      "value": 100
+    },
+    "opacity": {
+      "value": 0.1
+    },
+    "shape": {
+      "type": "circle"
+    },
+    "size": {
+      "value": { "min": 1, "max": 5 }
+    }
+  },
+  "detectRetina": true
 }
