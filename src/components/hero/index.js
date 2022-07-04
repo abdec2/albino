@@ -29,7 +29,8 @@ const Hero = () => {
                     <h1 className="tw-text-[42px]">Albino </h1>
                     <p>An Innovative NFT & Metaverse
                         platform</p>
-                    <a href="./whitepaper.pdf" className="btn btn-inverse">View White Paper</a>
+                    <a href="./whitepaper.pdf" className="btn">View White Paper</a>
+                    <a href="#" className="btn">Buy Tokens</a>
                 </div>
             </div>
         </section>
