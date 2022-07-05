@@ -19,6 +19,7 @@ import Roadmap from './components/roadmap'
 import Community from './components/community'
 import GotoTop from './components/gotoTop';
 import Footer from './components/footer'
+import Team from './components/team';
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
           <WhyChoose /> */}
           <Token />
           <Roadmap />
+          <Team />
           <Community />
           <Footer />
           <GotoTop />

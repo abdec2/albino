@@ -18,6 +18,7 @@ const HeaderComponent = () => {
               <li className="scroll"> <a href="#token">Token</a> </li>
 
               <li className="scroll"> <a href="#roadmap">Road Map</a> </li>
+              <li className="scroll"> <a href="#team">Team</a> </li>
 
               <li className="scroll"> <a href="./whitepaper.pdf">Whitepaper</a> </li>
             </ul>

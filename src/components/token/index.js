@@ -7,6 +7,8 @@ import metamaskIcon from './../../assets/metamask.svg'
 import polygonIcon from './../../assets/polygon.svg'
 import './token.css'
 
+import Countdown, { zeroPad } from "react-countdown";
+
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
@@ -18,6 +20,7 @@ const Token = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const [errMsg, setErrMsg] = useState('');
+    const mintDate = new Date("2022-07-11T00:00:00");
 
     const ethPrice = useRef(null);
 
@@ -53,7 +56,7 @@ const Token = () => {
     }
 
     const buyToken = async (e) => {
-        
+
         try {
             e.preventDefault();
             if (!window.ethereum) {
@@ -66,7 +69,7 @@ const Token = () => {
                 return
             }
             if (!account) {
-                
+
                 MySwal.fire({
                     icon: 'error',
                     text: 'Please connnect wallet',
@@ -103,7 +106,7 @@ const Token = () => {
                 })
                 return;
             }
-            
+
             setLoading(true);
             const signer = web3.provider.getSigner();
             console.log(signer)
@@ -126,7 +129,7 @@ const Token = () => {
             console.log(estimate.toString())
 
             const tx = {
-                gasLimit: estimate.toString(), 
+                gasLimit: estimate.toString(),
                 value: price.toString()
             }
 
@@ -145,14 +148,36 @@ const Token = () => {
         }
     }
 
-    useEffect(()=>{
-        if(window.ethereum) {
+    const renderer = ({ days, hours, minutes, seconds }) => (
+        <div className="tw-flex tw-items-center tw-justify-center lg:tw-justify-start">
+            <div className="tw-bg-black tw-bg-opacity-40 tw-rounded-lg tw-m-[10px] tw-min-w-[70px] md:tw-min-w-[100px] tw-py-5 tw-text-center tw-border tw-border-white">
+                <div className="tw-text-white tw-text-[2rem] tw-mb-[10px]">{zeroPad(days)}</div>
+                <div className="tw-uppercase tw-text-white">Days</div>
+            </div>
+            <div className="tw-bg-black tw-bg-opacity-40 tw-rounded-lg tw-m-[10px] tw-min-w-[70px] md:tw-min-w-[100px] tw-py-5 tw-text-center tw-border tw-border-white">
+                <div className="tw-text-white tw-text-[2rem] tw-mb-[10px]">{zeroPad(hours)}</div>
+                <div className="tw-uppercase tw-text-white">Hours</div>
+            </div>
+            <div className="tw-bg-black tw-bg-opacity-40 tw-rounded-lg tw-m-[10px] tw-min-w-[70px] md:tw-min-w-[100px] tw-py-5 tw-text-center tw-border tw-border-white">
+                <div className="tw-text-white tw-text-[2rem] tw-mb-[10px]">{zeroPad(minutes)}</div>
+                <div className="tw-uppercase tw-text-white">Mins</div>
+            </div>
+            <div className="tw-bg-black tw-bg-opacity-40 tw-rounded-lg tw-m-[10px] tw-min-w-[70px] md:tw-min-w-[100px] tw-py-5 tw-text-center tw-border tw-border-white">
+                <div className="tw-text-white tw-text-[2rem] tw-mb-[10px]">{zeroPad(seconds)}</div>
+                <div className="tw-uppercase tw-text-white">Secs</div>
+            </div>
+
+        </div>
+    );
+
+    useEffect(() => {
+        if (window.ethereum) {
             window.ethereum.on("accountsChanged", (accounts) => {
                 addAccount(accounts[0]);
             });
-              
-              // Subscribe to chainId change
-              window.ethereum.on("chainChanged", (chainId) => {
+
+            // Subscribe to chainId change
+            window.ethereum.on("chainChanged", (chainId) => {
                 window.location.reload();
             });
         }
@@ -167,41 +192,49 @@ const Token = () => {
                     </div>
                 </div>
                 <div className="row align-items-center justify-content-between gutter-vr-50px tw-space-y-20 lg:tw-space-y-0">
-                    <div className="col-lg-6">
-                        <div className="row gutter-vr-30px tw-space-y-4">
-                            <div className="col-sm-6">
-                                <div className="" data-animate="fadeInUp" data-delay=".3">
-                                    <h6 className="">Contract Address</h6>
-                                    <p style={{ wordBreak: "break-all" }}>{CONFIG.TOKEN_ADDRESS}</p>
+                    <div className="col-lg-7">
+                        <Countdown
+                            date={Date.now() + mintDate.getTime() - new Date().getTime()}
+                            renderer={renderer}
+                        />
+                        <div className="tw-flex tw-items-center tw-justify-start tw-p-[10px]">
+                            <div className="tw-w-1/3">
+                                <div className="">
+                                    <h6 className="">Token Name:</h6>
+                                    <p>ALBINO</p>
                                 </div>
                             </div>
-                            <div className="col-sm-6">
-                                <div className="" data-animate="fadeInUp" data-delay=".4">
-                                    <h6 className="">Total Supply</h6>
-                                    <p>99,000,000</p>
-                                </div>
-                            </div>
-                            <div className="col-sm-6">
-                                <div className="" data-animate="fadeInUp" data-delay=".5">
-                                    <h6 className="">Network</h6>
-                                    <p>Polygon Network</p>
-                                </div>
-                            </div>
-                            <div className="col-sm-6">
-                                <div className="" data-animate="fadeInUp" data-delay=".6">
+                            <div className="tw-w-1/3">
+                                <div className="">
                                     <h6 className="">Token Symbol</h6>
                                     <p>ABO</p>
                                 </div>
                             </div>
-                            <div className="col-sm-6">
-                                <div className="" data-animate="fadeInUp" data-delay=".7">
-                                    <h6 className="">Decimal</h6>
+                        </div>
+                        <div className="tw-flex tw-items-center tw-justify-start tw-p-[10px]">
+                            <div className="tw-w-1/3">
+                                <div className="">
+                                    <h6 className="">Total Supply:</h6>
+                                    <p>99,000,000</p>
+                                </div>
+                            </div>
+                            <div className="tw-w-1/3">
+                                <div className="">
+                                    <h6 className="">Network</h6>
+                                    <p>Polygon Network</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="tw-flex tw-items-center tw-justify-start tw-p-[10px]">
+                            <div className="tw-w-1/3">
+                                <div className="">
+                                    <h6 className="">Decimal:</h6>
                                     <p>18</p>
                                 </div>
                             </div>
-                            <div className="col-sm-6">
-                                <div className="" data-animate="fadeInUp" data-delay=".8">
-                                    <h6 className="">Minimal transaction amount</h6>
+                            <div className="tw-w-1/3">
+                                <div className="">
+                                    <h6 className="">Minimum Purchase</h6>
                                     <p>50 Matic</p>
                                 </div>
                             </div>
@@ -217,7 +250,7 @@ const Token = () => {
                                 {account ? (
                                     <button className='tw-w-1/2 tw-truncate tw-text-white tw-flex tw-flex-row tw-items-center tw-justify-center tw-px-4 tw-py-1 tw-border tw-border-white btn-round metamask-bg on-bg-theme' onClick={() => delAccount()}>
                                         <img className="metamask-width tw-mr-2" src={polygonIcon} alt="metamask" />
-                                        {account.slice(0,5) + '..' + account.slice(38,42)}
+                                        {account.slice(0, 5) + '..' + account.slice(38, 42)}
                                     </button>
                                 ) : (
                                     <button className='tw-w-1/2 tw-truncate tw-text-white tw-flex tw-flex-row tw-items-center tw-justify-center tw-px-4 tw-py-1 tw-border tw-border-white btn-round metamask-bg on-bg-theme' onClick={() => ConnectWallet(setError, setErrMsg)}>
@@ -226,7 +259,7 @@ const Token = () => {
                                     </button>
                                 )}
                             </div>
-                            <form onSubmit={buyToken}>
+                            <form onSubmit={e => e.preventDefault()}> {/* buyToken */}
                                 <div className="mb-3">
                                     <label className="tw-text-white">Amount in Matic</label>
                                     <input ref={ethPrice} type="text" className="tw-w-full tw-h-12 tw-rounded tw-p-2 txtBoxAmount" required />
