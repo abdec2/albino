@@ -1,8 +1,24 @@
 import { createContext, useReducer } from "react";
 import { AppReducer } from './AppReducer'
 
+import Web3Modal from 'web3modal';
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import { ethers } from 'ethers';
+import CONFIG from './../config/config.json'
+
+const providerOptions = {
+    walletconnect: {
+        package: WalletConnectProvider, // required
+        options: {
+            rpc: {
+                80001: 'https://matic-mumbai.chainstacklabs.com'
+            }
+        }
+    }
+};
+
 const initialState = {
-    account: null, 
+    account: null,
     network: null,
     web3: {
         contract: null,
@@ -19,7 +35,7 @@ export const GlobalProvider = ({ children }) => {
     const addAccount = (account) => {
         dispatch({
             type: 'ADD_ACCOUNT',
-            payload: account.id
+            payload: account
         })
     }
     const delAccount = () => {
@@ -56,33 +72,59 @@ export const GlobalProvider = ({ children }) => {
 
     const addProvider = (provider) => {
         dispatch({
-            type: 'ADD_CONTRACT',
+            type: 'ADD_PROVIDER',
             payload: provider
         })
     }
 
     const delProvider = () => {
         dispatch({
-            type: 'DELETE_CONTRACT'
+            type: 'DELETE_PROVIDER'
         })
-    }
+    }    
 
-    
+    const ConnectWallet = async (setError, setErrMsg) => {
+        try {
+            const web3modal = new Web3Modal({
+                providerOptions
+            });
+            const instance = await web3modal.connect();
+            const provider = new ethers.providers.Web3Provider(instance);
+            addProvider(provider)
+            const signer = provider.getSigner();
+            const address = await signer.getAddress();
+            addAccount(address);
+            const network = await provider.getNetwork();
+            console.log(network)
+            if (network.chainId !== CONFIG.NETWORK_ID) {
+                setError(true)
+                setErrMsg(`Contract is not deployed on current network. please choose ${CONFIG.NETWORK}`)
+                
+            } else {
+                setError(false)
+                setErrMsg('')
+                addNetwork(network)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
 
     return (
         <GlobalContext.Provider value={
             {
-                account: state.account, 
+                account: state.account,
                 network: state.network,
                 web3: state.web3,
-                delAccount, 
+                delAccount,
                 addAccount,
                 addNetwork,
                 delNetwork,
                 addContract,
-                delContract, 
+                delContract,
                 addProvider,
-                delProvider
+                delProvider,
+                ConnectWallet
 
             }
         }
