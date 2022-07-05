@@ -59,7 +59,7 @@ const Token = () => {
             if (!window.ethereum) {
                 MySwal.fire({
                     icon: 'error',
-                    title: 'Please install MetaMask',
+                    text: 'Please install MetaMask',
                     showConfirmButton: false,
                     timer: 1500
                 })
@@ -69,7 +69,7 @@ const Token = () => {
                 
                 MySwal.fire({
                     icon: 'error',
-                    title: 'Please connnect wallet',
+                    text: 'Please connnect wallet',
                     showConfirmButton: false,
                     timer: 1500
                 })
@@ -79,9 +79,27 @@ const Token = () => {
             if (error) {
                 MySwal.fire({
                     icon: 'error',
-                    title: 'something went wrong. please check the network.',
+                    text: 'something went wrong. please check the network.',
                     showConfirmButton: false,
                     timer: 1500
+                })
+                return;
+            }
+
+            if (parseFloat(ethPrice.current.value) < parseFloat(CONFIG.MIN_PURCHASE)) {
+                MySwal.fire({
+                    icon: 'error',
+                    text: `Purchase should not be less than ${CONFIG.MIN_PURCHASE} Matic`,
+                    showConfirmButton: true
+                })
+                return;
+            }
+
+            if (parseFloat(ethPrice.current.value) > parseFloat(CONFIG.MAX_PURCHASE)) {
+                MySwal.fire({
+                    icon: 'error',
+                    text: `Purchase should not be greater than ${CONFIG.MAX_PURCHASE} Matic`,
+                    showConfirmButton: true
                 })
                 return;
             }
@@ -97,7 +115,7 @@ const Token = () => {
                 setLoading(false);
                 MySwal.fire({
                     icon: 'error',
-                    title: 'Insufficient Balance',
+                    text: 'Insufficient Balance',
                     showConfirmButton: false,
                     timer: 1500
                 })
@@ -154,7 +172,7 @@ const Token = () => {
                             <div className="col-sm-6">
                                 <div className="" data-animate="fadeInUp" data-delay=".3">
                                     <h6 className="">Contract Address</h6>
-                                    <p style={{ wordBreak: "break-all" }}>0x25d078698fED88aD2db07c923106b7D9625FafB8</p>
+                                    <p style={{ wordBreak: "break-all" }}>{CONFIG.TOKEN_ADDRESS}</p>
                                 </div>
                             </div>
                             <div className="col-sm-6">
@@ -184,7 +202,7 @@ const Token = () => {
                             <div className="col-sm-6">
                                 <div className="" data-animate="fadeInUp" data-delay=".8">
                                     <h6 className="">Minimal transaction amount</h6>
-                                    <p>1 Matic</p>
+                                    <p>50 Matic</p>
                                 </div>
                             </div>
                         </div>

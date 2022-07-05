@@ -19,6 +19,9 @@ const Community = () => {
                                 </li>
                                 <li><a href="https://www.youtube.com/channel/UCE8ba8fKlJ2KpCCKEi4F9Xg"><i className="fab fa-youtube"></i></a>
                                 </li>
+                                <li><a href="https://t.me/albinotokens"><i className="fab fa-telegram"></i></a>
+                                </li>
+                                
                             </ul>
                         </div>
                     </div>
