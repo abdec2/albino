@@ -19,9 +19,9 @@ const Team = () => {
                             <img alt="team" className="tw-flex-shrink-0 tw-rounded-lg tw-w-full tw-h-80 tw-object-cover tw-object-top tw-mb-4 hover:tw-scale-110" src={img1} />
                                 <div className="tw-w-full">
                                     <h2 className="title-font tw-font-medium tw-text-lg tw-text-gray-900 tw-mb-2">Prasenjit Das</h2>
-                                    {/* <h3 className="tw-text-gray-500 tw-mb-3">UI Developer</h3> */}
+                                    <h3 className="tw-text-gray-500 tw-mb-3">COO</h3>
                                     <span className="tw-inline-flex">
-                                        <a className="tw-text-gray-500">
+                                        <a href="https://www.linkedin.com/in/prasenjit-das-3a037022b/" target="_blank" className="tw-text-gray-500">
                                             <svg viewBox="0 0 448 512" className="tw-w-5 tw-h-5"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
                                         </a>
                                     </span>
@@ -33,8 +33,8 @@ const Team = () => {
                         <div className="tw-h-full tw-flex tw-flex-col tw-items-center tw-text-center card tw-p-4 tw-shadow-xl">
                             <img alt="team" className="tw-flex-shrink-0 tw-rounded-lg tw-w-full tw-h-80 tw-object-cover tw-object-top tw-mb-4 hover:tw-scale-110" src={img2} />
                                 <div className="tw-w-full">
-                                    <h2 className="title-font tw-font-medium tw-text-lg tw-text-gray-900 tw-mb-2">Nripendra Bhattacharjee</h2>
-                                    {/* <h3 className="tw-text-gray-500 tw-mb-3">UI Developer</h3> */}
+                                    <h2 className="title-font tw-font-medium tw-text-lg tw-text-gray-900 tw-mb-2">Nripendra Narayan Bhattacharjee</h2>
+                                    <h3 className="tw-text-gray-500 tw-mb-3">CTO</h3>
                                     <span className="tw-inline-flex">
                                         <a href="https://www.linkedin.com/in/nripendra-narayan-bhattacharjee-a03776a9/" target="_blank" className="tw-text-gray-500">
                                             <svg viewBox="0 0 448 512" className="tw-w-5 tw-h-5"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
@@ -49,7 +49,7 @@ const Team = () => {
                             <img alt="team" className="tw-flex-shrink-0 tw-rounded-lg tw-w-full tw-h-80 tw-object-cover tw-object-center tw-mb-4 hover:tw-scale-110" src={img3} />
                                 <div className="tw-w-full">
                                     <h2 className="title-font tw-font-medium tw-text-lg tw-text-gray-900 tw-mb-2">Md Asanur Rahaman</h2>
-                                    {/* <h3 className="tw-text-gray-500 tw-mb-3">UI Developer</h3> */}
+                                    <h3 className="tw-text-gray-500 tw-mb-3">Financial Payments Architect</h3>
                                     <span className="tw-inline-flex">
                                         <a href="https://www.linkedin.com/in/md-asanur-rahaman-089734191/" target="_blank" className="tw-text-gray-500">
                                             <svg viewBox="0 0 448 512" className="tw-w-5 tw-h-5"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
@@ -63,8 +63,8 @@ const Team = () => {
                         <div className="tw-h-full tw-flex tw-flex-col tw-items-center tw-text-center card tw-p-4 tw-shadow-xl">
                             <img alt="team" className="tw-flex-shrink-0 tw-rounded-lg tw-w-full tw-h-80 tw-object-cover tw-object-top tw-mb-4 hover:tw-scale-110" src={img4} />
                                 <div className="tw-w-full">
-                                    <h2 className="title-font tw-font-medium tw-text-lg tw-text-gray-900 tw-mb-2">Nirmla Debnath</h2>
-                                    {/* <h3 className="tw-text-gray-500 tw-mb-3">UI Developer</h3> */}
+                                    <h2 className="title-font tw-font-medium tw-text-lg tw-text-gray-900 tw-mb-2">Nirmal Debnath</h2>
+                                    <h3 className="tw-text-gray-500 tw-mb-3">Business Head</h3>
                                     <span className="tw-inline-flex">
                                         <a href="https://www.linkedin.com/in/nirmla-debnath-5544b5244/" target="_blank" className="tw-text-gray-500">
                                             <svg viewBox="0 0 448 512" className="tw-w-5 tw-h-5"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
@@ -79,7 +79,7 @@ const Team = () => {
                             <img alt="team" className="tw-flex-shrink-0 tw-rounded-lg tw-w-full tw-h-80 tw-object-cover tw-object-top tw-mb-4 hover:tw-scale-110" src={img5} />
                                 <div className="tw-w-full">
                                     <h2 className="title-font tw-font-medium tw-text-lg tw-text-gray-900 tw-mb-2">Prasanta Debnath</h2>
-                                    {/* <h3 className="tw-text-gray-500 tw-mb-3">UI Developer</h3> */}
+                                    <h3 className="tw-text-gray-500 tw-mb-3">Marketing Head</h3>
                                     <span className="tw-inline-flex">
                                         <a href="https://www.linkedin.com/in/prasanta-debnath-331036244/" target="_blank" className="tw-text-gray-500">
                                             <svg viewBox="0 0 448 512" className="tw-w-5 tw-h-5"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
