@@ -59,15 +59,6 @@ const Token = () => {
 
         try {
             e.preventDefault();
-            if (!window.ethereum) {
-                MySwal.fire({
-                    icon: 'error',
-                    text: 'Please install MetaMask',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                return
-            }
             if (!account) {
 
                 MySwal.fire({
