@@ -259,7 +259,7 @@ const Token = () => {
                                     </button>
                                 )}
                             </div>
-                            <form onSubmit={e => e.preventDefault()}> {/* buyToken */}
+                            <form onSubmit={buyToken}> {/* buyToken */}
                                 <div className="mb-3">
                                     <label className="tw-text-white">Amount in Matic</label>
                                     <input ref={ethPrice} type="text" className="tw-w-full tw-h-12 tw-rounded tw-p-2 txtBoxAmount" required />
