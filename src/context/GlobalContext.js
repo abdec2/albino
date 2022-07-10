@@ -11,7 +11,7 @@ const providerOptions = {
         package: WalletConnectProvider, // required
         options: {
             rpc: {
-                80001: 'https://matic-mumbai.chainstacklabs.com'
+                137: 'https://polygon-rpc.com'
             }
         }
     }

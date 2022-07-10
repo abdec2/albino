@@ -30,7 +30,7 @@ const Hero = () => {
                     <p>An Innovative NFT & Metaverse
                         platform</p>
                     <a href="./whitepaper.pdf" className="btn">View White Paper</a>
-                    <a href="#" className="btn">Buy Tokens</a>
+                    <a href="./audit.pdf" className="btn">Audit Report</a>
                 </div>
             </div>
         </section>
