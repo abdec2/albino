@@ -226,7 +226,7 @@ const Token = () => {
                             <div className="tw-w-1/3">
                                 <div className="">
                                     <h6 className="">Minimum Purchase</h6>
-                                    <p>50 Matic</p>
+                                    <p>15 Matic</p>
                                 </div>
                             </div>
                         </div>
