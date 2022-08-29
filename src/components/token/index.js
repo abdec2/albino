@@ -89,14 +89,14 @@ const Token = () => {
                 return;
             }
 
-            if (parseFloat(ethPrice.current.value) > parseFloat(CONFIG.MAX_PURCHASE)) {
-                MySwal.fire({
-                    icon: 'error',
-                    text: `Purchase should not be greater than ${CONFIG.MAX_PURCHASE} Matic`,
-                    showConfirmButton: true
-                })
-                return;
-            }
+            // if (parseFloat(ethPrice.current.value) > parseFloat(CONFIG.MAX_PURCHASE)) {
+            //     MySwal.fire({
+            //         icon: 'error',
+            //         text: `Purchase should not be greater than ${CONFIG.MAX_PURCHASE} Matic`,
+            //         showConfirmButton: true
+            //     })
+            //     return;
+            // }
 
             setLoading(true);
             const signer = web3.provider.getSigner();

@@ -5,6 +5,6 @@
     "NETWORK_ID": 137, 
     "TOKEN_SYMBOL":"ABO", 
     "TOKEN_DECIMAL": 18, 
-    "MIN_PURCHASE": 50,
+    "MIN_PURCHASE": 15,
     "MAX_PURCHASE": 5000
 }
